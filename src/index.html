@@ -1,12 +1,13 @@
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Abbie Smith | Video Editor</title>
   <meta name="description" content="">
   <meta name="robots" content="index, follow">
-  <meta name="author" content="James Bovis">
+  <meta name="author" content="Abbie Smith">
   
   <!-- Open Graph -->
   <meta property="og:description" content="">
@@ -18,12 +19,189 @@
   <meta property="og:image:height" content="630">
   <meta property="fb:app_id" content="">
 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  
   <!--build:css css/style.css -->
   <link rel="stylesheet" href="css/style.css">
   <!-- endbuild -->
   
 </head>
   <body>
-    <p>Hello World!</p>
+    <!-- Start Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            Abbie Smith
+          </a>
+          <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <a href="#">Work</a>
+            </div>
+            <div class="navbar-item">
+              <a href="#">About</a>
+            </div>
+
+            <div class="navbar-item">
+              <a href=""><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navigation -->
+
+    <section class="hero is-medium">
+      <div class="container">
+        <div class="hero-body">
+          <div class="container">
+            <div class="columns">
+              <div class="column is-8 is-offset-2">
+                 <h1 class="title has-text-centered animated fadeInUp">
+                  Abbie Smith is an <span id="herolist">experienced | fabulous | awesome</a></span> video editor with over 5 years experience. Living in Kent.
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="portfolio">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <a href="#">
+              <figure class="portfolio__item image is-16by9">
+                <img src="http://placehold.it/800x450">
+                
+                <div class="portfolio__item__caption">
+                  <div class="portfolio__item__caption__title">Very longerer project name</div>
+                  <div class="portfolio__item__caption__description">Project description</div>
+                </div>
+              </figure>
+            </a>
+          </div>
+
+          <div class="column">
+            <a href="#">
+              <figure class="portfolio__item image is-16by9">
+                <img src="http://placehold.it/800x450">
+                
+                <div class="portfolio__item__caption">
+                  <div class="portfolio__item__caption__title">Project</div>
+                  <div class="portfolio__item__caption__description">Project description</div>
+                </div>
+              </figure>
+            </a>
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column">
+            <a href="#">
+              <figure class="portfolio__item image is-16by9">
+                <img src="http://placehold.it/800x450">
+                
+                <div class="portfolio__item__caption">
+                  <div class="portfolio__item__caption__title">Very longerer project name</div>
+                  <div class="portfolio__item__caption__description">Project description</div>
+                </div>
+              </figure>
+            </a>
+          </div>
+
+          <div class="column">
+            <a href="#">
+              <figure class="portfolio__item image is-16by9">
+                <img src="http://placehold.it/800x450">
+                
+                <div class="portfolio__item__caption">
+                  <div class="portfolio__item__caption__title">Project</div>
+                  <div class="portfolio__item__caption__description">Project description</div>
+                </div>
+              </figure>
+            </a>
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column">
+            <a href="#">
+              <figure class="portfolio__item image is-16by9">
+                <img src="http://placehold.it/800x450">
+                
+                <div class="portfolio__item__caption">
+                  <div class="portfolio__item__caption__title">Very longerer project name</div>
+                  <div class="portfolio__item__caption__description">Project description</div>
+                </div>
+              </figure>
+            </a>
+          </div>
+
+          <div class="column">
+            <a href="#">
+              <figure class="portfolio__item image is-16by9">
+                <img src="http://placehold.it/800x450">
+                
+                <div class="portfolio__item__caption">
+                  <div class="portfolio__item__caption__title">Project</div>
+                  <div class="portfolio__item__caption__description">Project description</div>
+                </div>
+              </figure>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
   </body>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src ="js/cycleText.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+  <script>
+    $('#herolist').cycleText({
+      animation: 'fadeIn'
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
+
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+
+        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});
+  </script>
 </html>

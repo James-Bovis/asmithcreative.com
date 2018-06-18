@@ -1,0 +1,12 @@
+// Import bulma CSS
+@import '../../node_modules/bulma/bulma.sass';
+
+@import '_vendors/animate.min';
+
+// Import base styles
+@import '_base/typeography';
+@import '_base/colors';
+
+@import '_components/navigation';
+@import '_components/portfolio-item';
+
