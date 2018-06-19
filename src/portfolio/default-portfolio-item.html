@@ -73,11 +73,11 @@
       </div>
     </section>
 
-    <section class="portfolio__video">
+    <section class="portfolio__video" >
       <div class="container">
         <div class="columns">
-          <div class="column is-10 is-offset-1">
-            <img src="http://placehold.it/1152x648"
+          <div class="column is-10 is-offset-1 is-16by9 spinner">
+            <iframe class="portfolio__video__embed" src="https://player.vimeo.com/video/268775760" width="1152" height="648" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -105,6 +105,13 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
   <script>
+    $(function() {
+      $('.is-16by9').removeClass('spinner');
+      $('.portfolio__video__embed').addClass('portfolio__video__embed__loaded'); //Adds loaded class when finished loaded
+    });
+  </script>
+
+  <script>
     $('#herolist').cycleText({
       animation: 'fadeIn'
     });
@@ -112,29 +119,27 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      // Get all "navbar-burger" elements
+      var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-  // Get all "navbar-burger" elements
-  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      // Check if there are any navbar burgers
+      if ($navbarBurgers.length > 0) {
 
-  // Check if there are any navbar burgers
-  if ($navbarBurgers.length > 0) {
+        // Add a click event on each of them
+        $navbarBurgers.forEach(function ($el) {
+          $el.addEventListener('click', function () {
 
-    // Add a click event on each of them
-    $navbarBurgers.forEach(function ($el) {
-      $el.addEventListener('click', function () {
+            // Get the target from the "data-target" attribute
+            var target = $el.dataset.target;
+            var $target = document.getElementById(target);
 
-        // Get the target from the "data-target" attribute
-        var target = $el.dataset.target;
-        var $target = document.getElementById(target);
+            // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+            $el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
 
-        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-        $el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
-
-      });
+          });
+        });
+      }
     });
-  }
-
-});
   </script>
 </html>
