@@ -1,0 +1,26 @@
+// Animation speed variables
+$default-speed: 0.5s;
+$short-speed: 0.25s;
+$long-speed: 1s;
+
+
+// Styles for loading spinner
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+ 
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 3px solid $blue;
+  border-bottom-color: $black;
+  animation: spinner $default-speed linear infinite;
+}
