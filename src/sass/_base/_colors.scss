@@ -4,6 +4,10 @@ $white: #ffffff;
 
 .fa {
   &-twitter {
-    color: blue;
+    color: $blue;
+  }
+
+  &-heart {
+    color: $blue;
   }
 }
