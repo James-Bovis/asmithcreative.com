@@ -1,5 +1,7 @@
 .navbar {
-  padding: 2rem 0rem;
+  @include mq($from: desktop) {
+    padding: 2rem 0rem;
+  }
 
   &__hero {
     position: absolute;
