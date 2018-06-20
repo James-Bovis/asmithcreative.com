@@ -1,11 +1,16 @@
 .footer {
   background-color: $white;
+  
   .social-icon-list li {
     display: inline;
     margin: 0px 5px;
 
+    &:first-child {
+      margin-left: 0px;
+    }
+
     &:last-child {
-      margin: 0px;
+      margin-right: 0px;
     }
   }
 }
