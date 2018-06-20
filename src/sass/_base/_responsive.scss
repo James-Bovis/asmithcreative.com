@@ -1,0 +1,20 @@
+// Set responsive breakpoints
+  // Turn on responsiveness
+  $mq-responsive: true;
+
+  // List Bulma breakpoints
+  $mq-breakpoints: (
+    mobile:  768px,
+    tablet:  1024px,
+    desktop: 1216px,
+    wide:    1408px,
+  );
+
+  // Which breakpoint to use if mq-responsive = false
+  $mq-static-breakpoint: desktop;
+
+  // Show which breakpoint is active in top right
+  $mq-show-breakpoints: (mobile, tablet, desktop, wide);
+
+// Import MQ mixin
+@import '../_vendors/mq';
