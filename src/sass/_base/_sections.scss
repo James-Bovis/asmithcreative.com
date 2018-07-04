@@ -1,0 +1,22 @@
+.section {
+  padding: 4em 0em;
+  margin: 4em 0em;
+
+  &--blue {
+    background: $blue;
+  }
+
+  &--black {
+    background: $black;
+  }
+
+  &--no-mar-bottom {
+    margin-bottom: 0px;
+  }
+
+  .inner {
+    padding: 4em;
+    border-radius: 0.5em;
+    background: $white;
+  }
+}
