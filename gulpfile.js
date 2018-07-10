@@ -8,6 +8,7 @@ var del = require('del');
 var uncss = require('gulp-uncss');
 var cache = require('gulp-cache');
 var concat = require('gulp-concat');
+var nunjucksRender = require('gulp-nunjucks-render');
 
 // TASK LIST FOR BUILDING DIST VERSION
 
@@ -81,6 +82,18 @@ var concat = require('gulp-concat');
     // Reloads the browser whenever HTML or JS files change
     gulp.watch('src/*.html', browserSync.reload); 
     gulp.watch('src/js/**/*.js', browserSync.reload); 
+  });
+
+  // Nunjucks task
+  gulp.task('nunjucks', function() {
+    // Gets .html and .nunjucks files in pages
+    return gulp.src('src/pages/**/*.+(html|nunjucks)')
+    // Renders template with nunjucks
+    .pipe(nunjucksRender({
+        path: ['src/templates']
+      }))
+    // output files in app folder
+    .pipe(gulp.dest('dist/'))
   });
 
   // Main Gulp Task
