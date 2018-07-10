@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+  {% block css_path %}../{% endblock %}
+  {% block content %}
+    <section class="hero is medium">
+      <div class="container">
+        <div class="hero-body">
+          <div class="container">
+            <div class="columns">
+              <div class="column is-8 is-offset-2">
+                 <h1 class="title has-text-centered">{% block portfolio_item_name %} {% endblock %}</h1>
+                 <h2 class="subtitle has-text-centered">Client: {% block portfolio_item_client %} {% endblock %} | Length: {% block portfolio_item_length %} {% endblock %}</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio__video" >
+      <div class="container">
+        <div class="columns">
+          <div class="column is-10 is-offset-1 is-16by9 spinner">
+            <div class="video-embed">
+              <iframe src="https://player.vimeo.com/video/{% block portfolio_video_number %} {% endblock %}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio__detail">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-10 is-offset-1">
+            <h2>About this project</h2>
+            {% block portfolio_item_description %} {% endblock %}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endblock %}
