@@ -21,7 +21,7 @@ var nunjucksRender = require('gulp-nunjucks-render');
   gulp.task('sass', function(){
     return gulp.src('src/sass/style.scss')
       .pipe(sass({outputStyle: 'compressed'}))
-      .pipe(gulp.dest('src/css'))
+      .pipe(gulp.dest('dist/css'))
       .pipe(browserSync.reload({
         stream: true
       }))
@@ -71,7 +71,7 @@ var nunjucksRender = require('gulp-nunjucks-render');
   gulp.task('browserSync', function() {
     browserSync.init({
       server: {
-        baseDir: 'src'
+        baseDir: 'dist'
       },
     })
   })
@@ -98,7 +98,7 @@ var nunjucksRender = require('gulp-nunjucks-render');
 
   // Main Gulp Task
   gulp.task('default', function (callback) {
-    runSequence(['sass','browserSync', 'watch'],
+    runSequence(['sass','nunjucks','browserSync', 'watch'],
       callback
     )
   })
