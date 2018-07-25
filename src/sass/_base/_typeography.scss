@@ -1,9 +1,4 @@
-@font-face {
-  font-family: 'ASmithCreative';
-  src: url('../fonts/Chivo.ttf')  format('truetype'); /* Safari, Android, iOS */
-}
-
-$font-stack: 'ASmithCreative', 'Open Sans', 'Helvetica Neue', sans-serif;
+$font-stack: 'Poppins', 'Open Sans', 'Helvetica Neue', sans-serif;
 
 body {
   font-size: 16px;
