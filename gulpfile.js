@@ -96,9 +96,14 @@ var nunjucksRender = require('gulp-nunjucks-render');
     .pipe(gulp.dest('dist/'))
   });
 
+   gulp.task('copy-js', function() {
+    return gulp.src('src/js/*.js')
+    .pipe(gulp.dest('dist/js/'))
+  })
+
   // Main Gulp Task
   gulp.task('default', function (callback) {
-    runSequence(['sass','nunjucks','browserSync', 'watch'],
+    runSequence(['sass','nunjucks', 'copy-js', 'browserSync', 'watch'],
       callback
     )
   })
