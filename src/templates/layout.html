@@ -76,6 +76,10 @@
       <!-- End Navigation -->
 
       {% block content %}
+
+
+
+
       {% endblock %}
       
       <!-- Start Footer -->
@@ -138,7 +142,7 @@
       'use strict';
       var options = {
         onStart: {
-          duration: 300, // Duration of our animation
+          duration: 100, // Duration of our animation
           render: function ($container) {
             // Add your CSS animation reversing class
             $container.addClass('fadeOut');
@@ -148,7 +152,7 @@
           }
         },
         onReady: {
-          duration: 0,
+          duration: 100,
           render: function ($container, $newContent) {
             // Remove your CSS animation reversing class
             $container.removeClass('fadeOut');
