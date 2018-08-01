@@ -32,3 +32,11 @@
     background: $white;
   }
 }
+
+.portfolio {
+  &__home {
+    @include mq($from: tablet) {
+      margin-top: -5rem;
+    }
+  }
+}
