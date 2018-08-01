@@ -2,10 +2,11 @@
 @import '../../node_modules/bulma/bulma.sass';
 
 // Import base styles
+@import '_base/responsive';
 @import '_base/typeography';
 @import '_base/colors';
 @import '_base/animation';
-@import '_base/responsive';
+
 @import '_base/sections';
 
 // Import components
