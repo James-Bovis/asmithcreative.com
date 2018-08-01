@@ -19,6 +19,7 @@
   <meta property="og:image:height" content="630">
   <meta property="fb:app_id" content="">
   
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700" rel="stylesheet">
   
   <!--build:css css/style.css -->
@@ -27,82 +28,83 @@
   
 </head>
   <body>
-    <!-- Start Navigation -->
-    <nav class="navbar">
-      <div class="container">
-        <div class="navbar-brand">
-          <a href="/" class="navbar-item">
-            Abbie Smith
-          </a>
-          <div class="navbar-burger burger" data-target="navbarMenu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-
-        <div id="navbarMenu" class="navbar-menu">
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <a href="work.html">Work</a>
-            </div>
-            <div class="navbar-item">
-              <a href="about.html">About</a>
-            </div>
-
-            <div class="navbar-item">
-              <a href="mailto:hello@asmithvideo.com">Contact</a>
-            </div>
-
-            <div class="navbar-item">
-              <a href="https://twitter.com/abbiegsmith" target="_blank"><i class="fab fa-twitter"></i></a>
-            </div>
-
-            <div class="navbar-item">
-              <a href="https://vimeo.com/abbiesmithcreative" target="_blank"><i class="fab fa-vimeo-v"></i></a>
-            </div>
-
-            <div class="navbar-item">
-              <a href="https://www.instagram.com/abbiesmith01/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <!-- For smoothState.js -->
+    <div id="main" class="animated">
+        
+      <!-- Start Navigation -->
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+              Abbie Smith
+            </a>
+            <div class="navbar-burger burger" data-target="navbarMenu">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
           </div>
-        </div>
-      </div>
-    </nav>
-    <!-- End Navigation -->
 
-    {% block content %}
+          <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <a href="work.html">Work</a>
+              </div>
+              <div class="navbar-item">
+                <a href="about.html">About</a>
+              </div>
 
+              <div class="navbar-item">
+                <a href="mailto:hello@asmithvideo.com">Contact</a>
+              </div>
 
+              <div class="navbar-item">
+                <a href="https://twitter.com/abbiegsmith" target="_blank"><i class="fab fa-twitter"></i></a>
+              </div>
 
+              <div class="navbar-item">
+                <a href="https://vimeo.com/abbiesmithcreative" target="_blank"><i class="fab fa-vimeo-v"></i></a>
+              </div>
 
-    {% endblock %}
-    
-    <!-- Start Footer -->
-    <section class="footer">
-      <div class="container">
-        <div class="columns">
-          <div class="column has-text-centered">
-            <p>© 2018 Abbie Smith. All rights reserved.</p>
-            <p>Site built with <i class="fas fa-heart"></i> by <a href="http://jamesbovis.com" target="_blank">James Bovis</a></p>
-
-            <ul class="social-icon-list">
-              <li><a href="https://vimeo.com/abbiesmithcreative" target="_blank"><i class="fab fa-vimeo-v"></i></a></li>
-              <li><a href="https://twitter.com/ASmithvideo" target="_blank"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="https://www.instagram.com/abbiesmith01/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-              <li><a href="https://www.linkedin.com/in/abbie-smith-258743a8/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-              <li><a href="mailto:hello@asmithcreative.com"><i class="far fa-envelope"></i></a></li>
-            </ul>
+              <div class="navbar-item">
+                <a href="https://www.instagram.com/abbiesmith01/" target="_blank"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </nav>
+      <!-- End Navigation -->
+
+      {% block content %}
+      {% endblock %}
+      
+      <!-- Start Footer -->
+      <section class="footer">
+        <div class="container">
+          <div class="columns">
+            <div class="column has-text-centered">
+              <p>© 2018 Abbie Smith. All rights reserved.</p>
+              <p>Site built with <i class="fas fa-heart"></i> by <a href="http://jamesbovis.com" target="_blank">James Bovis</a></p>
+
+              <ul class="social-icon-list">
+                <li><a href="https://vimeo.com/abbiesmithcreative" target="_blank"><i class="fab fa-vimeo-v"></i></a></li>
+                <li><a href="https://twitter.com/ASmithvideo" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/abbiesmith01/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/abbie-smith-258743a8/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="mailto:hello@asmithcreative.com"><i class="far fa-envelope"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </body>
   
-  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  
   <script src ="js/cycleText.min.js"></script>
+  <script src ="js/smoothState.min.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-
+  
   <script>
     $('#herolist').cycleText({
       animation: 'fadeInDown',
@@ -111,30 +113,58 @@
   </script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    $(document).ready(function() {
+      $('body').onPageLoad();
+    });
+  </script>
 
-      // Get all "navbar-burger" elements
-      var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-      // Check if there are any navbar burgers
-      if ($navbarBurgers.length > 0) {
-
-        // Add a click event on each of them
-        $navbarBurgers.forEach(function ($el) {
-          $el.addEventListener('click', function () {
-
-            // Get the target from the "data-target" attribute
-            var target = $el.dataset.target;
-            var $target = document.getElementById(target);
-
-            // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-            $el.classList.toggle('is-active');
-            $target.classList.toggle('is-active');
-
-          });
+  <script>
+    (function($) {
+      $.fn.onPageLoad = function() {
+        $('#herolist').cycleText({
+          animation: 'fadeInDown',
+          interval: '2000'
         });
-      }
 
+        $('.navbar-burger').click(function() {
+          $('.navbar-burger, .navbar-menu').toggleClass('is-active');
+        });
+      };
+    }(jQuery));
+  </script>
+
+  <script>
+    $(function(){
+      'use strict';
+      var options = {
+        onStart: {
+          duration: 300, // Duration of our animation
+          render: function ($container) {
+            // Add your CSS animation reversing class
+            $container.addClass('fadeOut');
+
+            // Restart your animation
+            smoothState.restartCSSAnimations();
+          }
+        },
+        onReady: {
+          duration: 0,
+          render: function ($container, $newContent) {
+            // Remove your CSS animation reversing class
+            $container.removeClass('fadeOut');
+            $container.addClass('fadeIn');
+
+            // Inject the new content
+            $container.html($newContent);
+          }
+        },
+
+        // Stops the conflict with the other jQuery plugins when transitionings
+        onAfter: function($container) {
+          $container.onPageLoad();
+        }
+      },
+      smoothState = $('#main').smoothState(options).data('smoothState');
     });
   </script>
 </html>
