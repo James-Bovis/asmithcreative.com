@@ -25,7 +25,7 @@
   margin: 0;
 }
 
-@include mq($from: mobile) {
+@include mq($from: desktop) {
   .columns {
     margin-left: -.75rem;
     margin-right: -.75rem;

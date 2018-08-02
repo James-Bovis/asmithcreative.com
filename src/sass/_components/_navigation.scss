@@ -3,12 +3,50 @@
     padding: 2rem 0rem;
   }
 
+  &-menu {
+    // Styles for mobile nav
+    @include mq($until: desktop) {
+      background: $blue;
+      color: white;
+      z-index: -20;
+      display: inherit;
+      position: absolute;
+      top: 0%;
+      width: 100%;
+      transition: all $short-speed ease-in-out;
+    }
+
+    @include mq($from: desktop) {
+      background: transparent;
+    }
+
+    .navbar-end {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .is-active {
+    top: 100%;
+    z-index: 10;
+  }
+
   &__hero {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    background-color: transparent;
-    color: white;
+    background: $blue;
+    z-index: auto;
+
+    @include mq($from: desktop) {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      background-color: transparent;
+      color: white;
+      z-index: 100;
+    }
+
+    .navbar-burger {
+      color: white;
+    }
 
     a {
       color: $white;
@@ -16,8 +54,13 @@
   }
 
   .navbar-brand {
+    background: blue;
     font-size: 1.25rem;
     font-weight: 500;
     color: $black;
+    z-index: 30;
+    position: absolute;
+    width: 100%;
   }
 }
+
