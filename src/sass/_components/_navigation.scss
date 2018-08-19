@@ -1,28 +1,40 @@
 .navbar {
   @include mq($from: desktop) {
+    background: transparent;
     padding: 2rem 0rem;
   }
 
   &-menu {
     // Styles for mobile nav
     @include mq($until: desktop) {
-      background: $blue;
-      color: white;
-      z-index: -20;
+      background: $black;
+      color: $white;
       display: inherit;
       position: absolute;
       top: 0%;
-      width: 100%;
       transition: all $short-speed ease-in-out;
-    }
-
-    @include mq($from: desktop) {
-      background: transparent;
+      width: 100%;
+      z-index: -20;
     }
 
     .navbar-end {
       display: flex;
       justify-content: center;
+    }
+  }
+
+  &-brand {
+    background: $black;
+    color: $white;
+    font-size: 1.25rem;
+    font-weight: 500;
+    position: absolute;
+    width: 100%;
+    z-index: 30;
+
+    @include mq($from: desktop) {
+      background: transparent;
+      z-index: auto;
     }
   }
 
@@ -36,31 +48,21 @@
     z-index: auto;
 
     @include mq($from: desktop) {
+      background-color: transparent;
+      color: $white;
       position: absolute;
       top: 0;
       width: 100%;
-      background-color: transparent;
-      color: white;
       z-index: 100;
     }
 
     .navbar-burger {
-      color: white;
+      color: $white;
     }
 
     a {
       color: $white;
     }
-  }
-
-  .navbar-brand {
-    background: blue;
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: $black;
-    z-index: 30;
-    position: absolute;
-    width: 100%;
   }
 }
 
