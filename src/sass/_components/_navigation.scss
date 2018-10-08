@@ -4,6 +4,14 @@
     padding: 2rem 0rem;
   }
 
+  a {
+    color: $white;
+
+    @include mq($from: desktop) {
+      color: $black
+    }
+  }
+
   &-menu {
     // Styles for mobile nav
     @include mq($until: desktop) {
@@ -44,9 +52,6 @@
   }
 
   &__hero {
-    background: $blue;
-    z-index: auto;
-
     @include mq($from: desktop) {
       background-color: transparent;
       color: $white;
