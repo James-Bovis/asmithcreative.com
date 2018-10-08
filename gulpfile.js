@@ -59,7 +59,7 @@ var nunjucksRender = require('gulp-nunjucks-render');
 
   // Runs the entire build process to create a finished dist folder
   gulp.task('build', function (callback) {
-    runSequence('clean:dist', 'sass', 'uncss', 
+    runSequence('clean:dist', 'sass', 'uncss',
       ['useref','images'],
       'concat')
   })
@@ -78,10 +78,10 @@ var nunjucksRender = require('gulp-nunjucks-render');
 
   // Watches CSS and JS files for changes and reloads browser
   gulp.task('watch', ['browserSync', 'sass'], function (){
-    gulp.watch('src/sass/**/*.scss', ['sass']); 
+    gulp.watch('src/sass/**/*.scss', ['sass']);
     // Reloads the browser whenever HTML or JS files change
-    gulp.watch('src/*.html', browserSync.reload); 
-    gulp.watch('src/js/**/*.js', browserSync.reload); 
+    gulp.watch('src/*.html', browserSync.reload);
+    gulp.watch('src/js/**/*.js', browserSync.reload);
   });
 
   // Nunjucks task
@@ -103,7 +103,7 @@ var nunjucksRender = require('gulp-nunjucks-render');
 
   // Main Gulp Task
   gulp.task('default', function (callback) {
-    runSequence(['sass','nunjucks', 'copy-js', 'browserSync', 'watch'],
+    runSequence(['sass','nunjucks', 'copy-js','images', 'browserSync', 'watch'],
       callback
     )
   })
