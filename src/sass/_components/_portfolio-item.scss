@@ -5,7 +5,7 @@
 
   img {
     opacity: 1;
-    transition: opacity 0.25s ease;
+    transition: opacity $short-speed ease;
     z-index: 10;
 
     &:hover {
@@ -33,14 +33,14 @@
       font-size: 1rem;
     }
   }
-  
+
 }
 
 // Video embed styles
 .portfolio__video {
   &__embed {
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: opacity $default-speed ease;
 
     &__loaded {
       opacity: 1;
