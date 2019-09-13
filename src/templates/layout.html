@@ -142,7 +142,7 @@
       'use strict';
       var options = {
         onStart: {
-          duration: 100, // Duration of our animation
+          duration: 500, // Duration of our animation
           render: function ($container) {
             // Add your CSS animation reversing class
             $container.addClass('fadeOut');
@@ -152,7 +152,7 @@
           }
         },
         onReady: {
-          duration: 100,
+          duration: 500,
           render: function ($container, $newContent) {
             // Remove your CSS animation reversing class
             $container.removeClass('fadeOut');

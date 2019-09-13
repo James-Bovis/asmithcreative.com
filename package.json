@@ -26,10 +26,12 @@
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-nunjucks-render": "^2.2.2",
-    "gulp-sass": "^4.0.1",
+    "gulp-sass": "^4.0.2",
     "gulp-uncss": "^1.0.6",
     "gulp-useref": "^3.1.5",
     "run-sequence": "^2.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "natives": "^1.1.6"
+  }
 }
